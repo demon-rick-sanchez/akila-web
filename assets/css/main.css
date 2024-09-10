@@ -89,6 +89,7 @@ h6 {
 
 /* PHP Email Form Messages
 ------------------------------*/
+
 .php-email-form .error-message {
   display: none;
   background: #df1529;
@@ -156,6 +157,30 @@ h6 {
   z-index: 997;
   min-width: 200px;
 }
+
+.head-img {
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+/* .content-img {
+  z-index: 1;
+} */
+
+/* Responsive background image */
+@media (max-width: 768px) {
+  .content-img {
+      background-image: url('/assets/img/Head-img.jpg/');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+}
+
 
 @media (max-height: 425px){
   .head-img{
