@@ -774,143 +774,113 @@
 
     </section>/Testimonials Section -->
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
+<!-- Contact Section -->
+<section id="contact" class="contact section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+  </div><!-- End Section Title -->
 
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
-        </div><!-- End Section Title -->
-
-        <div class="container" data-aos="fade" data-aos-delay="100">
-
-          <div class="row gy-4">
-
-            <div class="col-lg-4">
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>Sri Lanka</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call me</h3>
-                  <p><a href="tel:+94 76 599 0519">+94 76 599 0519</a></p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email me</h3>
-                  <p><a href="mailto:akilalakshitha45@gmail">akilalakshitha45@gmail.com</a></p>
-                </div>
-              </div><!-- End Info Item -->
-
-            </div>
-
-            <div class="col-lg-8">
-              <!-- Contact Form HTML -->
-              <form id="contactForm" method="POST" class="php-email-form">
-                <div class="row gy-4">
-
-                  <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                  </div>
-
-                  <div class="col-md-6">
-                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-                  </div>
-
-                  <div class="col-md-12">
-                    <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-                  </div>
-
-                  <div class="col-md-12">
-                    <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                    <button type="submit">Send Message</button>
-                  </div>
-
-                </div>
-              </form>
-
-
-            </div><!-- End Contact Form -->
-
+  <div class="container" data-aos="fade" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Address</h3>
+            <p>Sri Lanka</p>
           </div>
+        </div><!-- End Info Item -->
 
-        </div>
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call me</h3>
+            <p><a href="tel:+94 76 599 0519">+94 76 599 0519</a></p>
+          </div>
+        </div><!-- End Info Item -->
 
-      </section><!-- /Contact Section -->
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email me</h3>
+            <p><a href="mailto:akilalakshitha45@gmail">akilalakshitha45@gmail.com</a></p>
+          </div>
+        </div><!-- End Info Item -->
 
+      </div>
 
+      <div class="col-lg-8">
+        <!-- Contact Form HTML -->
+        <form id="contactForm" method="POST" class="php-email-form">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+              <div class="loading" style="display:none;">Loading</div>
+              <div class="error-message" style="display:none;">Error occurred. Please try again.</div>
+              <div class="sent-message" style="display:none;">Your message has been sent. Thank you!</div>
+              <button type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div><!-- End Contact Form -->
+    </div>
+  </div>
+</section><!-- /Contact Section -->
 
+<!-- EmailJS Script -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // Initialize EmailJS with your user ID
+  (function() {
+      emailjs.init("_ljnOsV0eqOlrPNQT"); // Replace with your actual User ID
+  })();
 
-      <!-- Firebase Script -->
+  // Add event listener to the form submission
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
 
-      <script type="module">
-        // Import Firebase functions from the SDKs
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+    // Collect form data
+    const formData = {
+      to_name: "Akila Lakshitha", // Static recipient name
+      from_name: document.querySelector('input[name="name"]').value,  // Sender name from form input
+      subject: document.querySelector('input[name="subject"]').value, // Subject from form input
+      message: document.querySelector('textarea[name="message"]').value, // Message from form textarea
+      reply_to: document.querySelector('input[name="email"]').value,  // Reply-to email
+    };
 
-        // Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyDv9QPjF4IwPnVgLVqF3j8j7JbSjppH4Js",
-          authDomain: "my-portfolio-database-fa246.firebaseapp.com",
-          projectId: "my-portfolio-database-fa246",
-          storageBucket: "my-portfolio-database-fa246.appspot.com",
-          messagingSenderId: "608221223141",
-          appId: "1:608221223141:web:6b6b38b4d4f493644b1c0c",
-          measurementId: "G-TMHXYG3F9G"
-        };
+    // Show loading spinner
+    document.querySelector(".loading").style.display = "block";
+    document.querySelector(".error-message").style.display = "none";
+    document.querySelector(".sent-message").style.display = "none";
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+    // Send email using EmailJS
+    emailjs.send("service_bhm8a5e", "template_vxwyxjr", formData)
+      .then(function(response) {
+        console.log("SUCCESS!", response.status, response.text);
+        // Hide loading spinner and display success message
+        document.querySelector(".loading").style.display = "none";
+        document.querySelector(".sent-message").style.display = "block";
+      }, function(error) {
+        console.error("FAILED...", error);
+        // Hide loading spinner and display error message
+        document.querySelector(".loading").style.display = "none";
+        document.querySelector(".error-message").textContent = "Error: " + error.text;
+        document.querySelector(".error-message").style.display = "block";
+      });
+  });
+</script>
 
-        // Wait for the form to be loaded before attaching the event listener
-        document.addEventListener("DOMContentLoaded", () => {
-          // Form submission handling
-          document.getElementById('contactForm').addEventListener('submit', async function (e) {
-            e.preventDefault(); // Prevent page reload
-
-            // Get form values
-            const name = document.querySelector('input[name="name"]').value;
-            const email = document.querySelector('input[name="email"]').value;
-            const subject = document.querySelector('input[name="subject"]').value;
-            const message = document.querySelector('textarea[name="message"]').value;
-
-            try {
-              // Add form data to Firestore
-              await addDoc(collection(db, "Contact Massege"), {
-                name: name,
-                email: email,
-                subject: subject,
-                message: message,
-                timestamp: new Date()
-              });
-
-              alert("Message sent successfully!");
-            } catch (error) {
-              console.error("Error adding document: ", error);
-              alert("Error sending message: " + error.message);
-            }
-          });
-        });
-
-      </script>
 
   </main>
 
@@ -969,10 +939,6 @@
 
 
 
-  <!-- Firebase App (the core Firebase SDK) -->
-  <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js"></script>
-  <!-- Firestore -->
-  <script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-firestore.js"></script>
 
 
 </body>
