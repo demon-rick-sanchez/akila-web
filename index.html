@@ -836,6 +836,17 @@
       </div><!-- End Contact Form -->
     </div>
   </div>
+
+
+  <!-- popup message section -->
+  <!-- Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Your message has been sent successfully!</p>
+    </div>
+  </div>
+
 </section><!-- /Contact Section -->
 
 <!-- EmailJS Script -->
@@ -879,6 +890,33 @@
         document.querySelector(".error-message").style.display = "block";
       });
   });
+</script>
+
+
+<script>
+  // Show the modal on successful message send
+emailjs.send("service_bhm8a5e", "template_vxwyxjr", formData)
+  .then(function(response) {
+    console.log("SUCCESS!", response.status, response.text);
+    document.querySelector(".loading").style.display = "none";
+    document.getElementById("successModal").style.display = "block"; // Show the modal
+  }, function(error) {
+    console.error("FAILED...", error);
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector(".error-message").style.display = "block";
+  });
+
+// Close the modal when the user clicks on <span> (x)
+document.querySelector(".close").onclick = function() {
+  document.getElementById("successModal").style.display = "none";
+}
+
+// Close the modal when the user clicks anywhere outside of the modal
+window.onclick = function(event) {
+  if (event.target == document.getElementById("successModal")) {
+    document.getElementById("successModal").style.display = "none";
+  }
+}
 </script>
 
 
